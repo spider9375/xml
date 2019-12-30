@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://www.w3schools.com"
+           xmlns="https://www.w3schools.com"
+           elementFormDefault="qualified">
+    <xs:simpleType name="manufacturerType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ауди"/>
+            <xs:enumeration value="Голф"/>
+            <xs:enumeration value="БМВ"/>
+            <xs:enumeration value="Хонда"/>
+            <xs:enumeration value="Хюндай"/>
+            <xs:enumeration value="Мазда"/>
+            <xs:enumeration value="Субару"/>
+            <xs:enumeration value="Нисан"/>
+            <xs:enumeration value="Тойота"/>
+            <xs:enumeration value="Тесла"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="engineType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Бензин"/>
+            <xs:enumeration value="Дизел"/>
+            <xs:enumeration value="Електричен"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="bodyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Седан"/>
+            <xs:enumeration value="Купе"/>
+            <xs:enumeration value="Комби"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="rimBrand">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ОЗ"/>
+            <xs:enumeration value="ББС"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tireBrand">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Мишелин"/>
+            <xs:enumeration value="Гоодийр"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tireSeason">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Летни"/>
+            <xs:enumeration value="Зимни"/>
+            <xs:enumeration value="Всесезонни"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="transmissionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ръчни"/>
+            <xs:enumeration value="Автоматични"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="engineDetails">
+        <xs:all>
+            <xs:element name="engineType" type="engineType"/>
+            <xs:element name="engineVolume" type="xs:double"/>
+            <xs:element name="horsePower" type="xs:int"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="manufactureDetails">
+        <xs:sequence>
+            <xs:element name="manufacturer" type="manufacturerType"/>
+            <xs:element name="model" type="xs:string"/>
+            <xs:element name="year" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="visualDetails">
+        <xs:all>
+            <xs:element name="color" type="xs:string"/>
+            <xs:element name="bodyType" type="bodyType"/>
+            <xs:element name="doorCount" type="xs:int"/>
+            <xs:element name="hasWing" type="xs:boolean"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="wheels">
+        <xs:all>
+            <xs:element name="rims">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="color" type="xs:string"/>
+                        <xs:element name="brand" type="rimBrand"/>
+                        <xs:element name="model" type="xs:string"/>
+                        <xs:element name="size" type="xs:int"/>
+                    </xs:all>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="tires">
+                <xs:complexType>
+                    <xs:all>
+                        <xs:element name="brand" type="tireBrand"/>
+                        <xs:element name="season" type="tireSeason"/>
+                        <xs:element name="width" type="xs:int"/>
+                        <xs:element name="diamater" type="xs:int"/>
+                    </xs:all>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="transmission">
+        <xs:all>
+            <xs:element name="type" type="transmissionType"/>
+            <xs:element name="gearCount" type="xs:int"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:element name="dealership">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="cars">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="car">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="manufactureDetails" type="manufactureDetails"/>
+                                        <xs:element name="engineDetails" type="engineDetails"/>
+                                        <xs:element name="visualDetails" type="visualDetails"/>
+                                        <xs:element name="wheels" type="wheels"/>
+                                        <xs:element name="transmission" type="transmission"/>
+                                        <xs:element name="price" type="xs:int"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
