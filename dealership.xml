@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="template.xsl"?>
+<?xml-stylesheet type="text/xsl" href="html.xsl"?>
 
 <dealership>
-<!--        xmlns="https://www.w3schools.com"-->
-<!--        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-<!--        xsi:schemaLocation="https://www.w3schools.com/xml schema.xsd">-->
-    <name>Колите на Митко</name>
+        xmlns="https://www.w3schools.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.w3schools.com/xml schema.xsd">
     <cars>
         <car id="1">
             <manufactureDetails>
