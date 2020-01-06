@@ -3,6 +3,7 @@
 <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 
     <xsl:template match="dealership">
+      <vehicles>
         <xsl:for-each select="cars/car">
             <vehicle>
                 <id>
@@ -41,6 +42,7 @@
                 </cost>
             </vehicle>
         </xsl:for-each>
+      </vehicles>
     </xsl:template>
 
 </xsl:stylesheet>
