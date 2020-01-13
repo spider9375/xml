@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="html.xsl"?>
+
+<dealership xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.w3schools.com" xsi:schemaLocation="https://www.w3schools.com/xml schema.xsd">
+  <cars>
+    <car id="1">
+      <manufactureDetails>
+        <manufacturer>Хонда</manufacturer>
+        <model>Акорд</model>
+        <year>2008</year>
+      </manufactureDetails>
+      <engineDetails>
+        <engineType>Бензин</engineType>
+        <engineVolume>2.4</engineVolume>
+        <horsePower>190</horsePower>
+      </engineDetails>
+      <visualDetails>
+        <bodyType>Седан</bodyType>
+        <doorCount>5</doorCount>
+        <color>Черен</color>
+        <hasWing>1</hasWing>
+      </visualDetails>
+      <wheels>
+        <rims>
+          <color>Черен</color>
+          <brand>ОЗ</brand>
+          <model>Суперлегера</model>
+          <size>17</size>
+        </rims>
+        <tires>
+          <brand>Мишелин</brand>
+          <season>Зимни</season>
+          <diameter>17</diameter>
+        </tires>
+      </wheels>
+      <transmission>
+        <transType>Ръчни</transType>
+        <gearCount>6</gearCount>
+      </transmission>
+      <price>11000</price>
+    </car>
+  </cars>
+</dealership>

@@ -2,9 +2,10 @@ from lxml import etree
 from copy import deepcopy
 from lxml.builder import ElementMaker
 
-E = ElementMaker(nsmap= {
-    'xsi':'http://www.w3.org/2001/XMLSchema-instance'
-})
+# E = ElementMaker(nsmap= {
+#     'xsi':'http://www.w3.org/2001/XMLSchema-instance'
+# })
+E = ElementMaker()
 
 DEALERSHIP = E.dealership
 CARS = E.cars
@@ -78,9 +79,17 @@ my_doc = DEALERSHIP(
             {'id': "1"}
         )
     ),
-    {"xmlns": "https://www.w3schools.com",
-     "{http://www.w3.org/2001/XMLSchema-instance}schemaLocation": "https://www.w3schools.com/xml schema.xsd"}
+    # {"xmlns": "https://www.w3schools.com",
+    #  "{http://www.w3.org/2001/XMLSchema-instance}schemaLocation": "https://www.w3schools.com/xml schema.xsd"}
 )
-print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
-print("<?xml-stylesheet type=\"text/xsl\" href=\"html.xsl\"?>\n")
-print(etree.tostring(my_doc, encoding="unicode", pretty_print=True))
+
+for i in range(5):
+  try:
+    f = open("generated"+ str(i) + ".xml", "x")
+    f.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
+    f.write("<?xml-stylesheet type=\"text/xsl\" href=\"html"+str(i)+".xsl\"?>\n")
+    f.write(etree.tostring(my_doc, encoding="utf8", method="xml", pretty_print=True).decode('cp1251'))
+    f.close()
+    break
+  except Exception as e:
+    continue
