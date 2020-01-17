@@ -2,9 +2,6 @@ from lxml import etree
 from copy import deepcopy
 from lxml.builder import ElementMaker
 
-# E = ElementMaker(nsmap= {
-#     'xsi':'http://www.w3.org/2001/XMLSchema-instance'
-# })
 E = ElementMaker()
 
 DEALERSHIP = E.dealership
@@ -35,7 +32,7 @@ SEASON = E.season
 DIAMETER = E.diameter
 WIDTH = E.width
 TRANSMISSION = E.transmission
-TRANS_TYPE = E.transType
+TRANS_TYPE = E.type
 GEAR_COUNT = E.gearCount
 PRICE = E.price
 
@@ -69,6 +66,7 @@ my_doc = DEALERSHIP(
                     BRAND("Мишелин"),
                     SEASON("Зимни"),
                     DIAMETER("17"),
+                    WIDTH("165"),
                 )
             ),
             TRANSMISSION(

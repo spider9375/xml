@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="html.xsl"?>
 
-<dealership
+<dealership>
         xmlns="https://www.w3schools.com"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="https://www.w3schools.com/xml schema.xsd">
@@ -42,6 +42,43 @@
                 <gearCount>6</gearCount>
             </transmission>
             <price>11000</price>
+        </car>
+        <car id="2">
+            <manufactureDetails>
+                <manufacturer>Хюндай</manufacturer>
+                <model>Лантра</model>
+                <year>1998</year>
+            </manufactureDetails>
+            <engineDetails>
+                <engineType>Бензин</engineType>
+                <engineVolume>1.5</engineVolume>
+                <horsePower>100</horsePower>
+            </engineDetails>
+            <visualDetails>
+                <bodyType>Седан</bodyType>
+                <doorCount>5</doorCount>
+                <color>Жълт</color>
+                <hasWing>1</hasWing>
+            </visualDetails>
+            <wheels>
+                <rims>
+                    <color>Сив</color>
+                    <brand>ББС</brand>
+                    <model>К19Л</model>
+                    <size>16</size>
+                </rims>
+                <tires>
+                    <brand>Гуудийр</brand>
+                    <season>Зимни</season>
+                    <diameter>16</diameter>
+                    <width>165</width>
+                </tires>
+            </wheels>
+            <transmission>
+                <type>Ръчни</type>
+                <gearCount>5</gearCount>
+            </transmission>
+            <price>1000</price>
         </car>
     </cars>
 </dealership>

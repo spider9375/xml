@@ -106,7 +106,7 @@
             <xs:element name="brand" type="tireBrand"/>
             <xs:element name="season" type="tireSeason"/>
             <xs:element name="width" type="xs:int"/>
-            <xs:element name="diamater" type="xs:int"/>
+            <xs:element name="diameter" type="xs:int"/>
           </xs:all>
         </xs:complexType>
       </xs:element>
@@ -126,7 +126,7 @@
         <xs:element name="cars">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="car">
+              <xs:element maxOccurs="unbounded" name="car">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="manufactureDetails" type="manufactureDetails"/>
